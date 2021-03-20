@@ -12,42 +12,63 @@
 </head>
 
 <body>
-    <div class=""
-    
-    <div id="container" class="tile is-ancester p-5">
+    <div id="container" class="tile is-ancester p-5 notification is-info is-vertical">
 
         <!-- Movie Search input field and Submit butto -->
-
+        <section class="header tile is-parent"><img src="assets/images/RT_300EssentialMovies_700X250.jpeg">
+        </section>
         <div class="tile is-parent notification is-info is-flex flex-justify-content-center">
+
+
             <section class="tile is-child">
                 <input id="searchInput" class="input" type="text" placeholder="Movie Search...">
-                <button id="searchButton" class="button">Submit</button>
+                <button id="searchBtn" class="button">Submit</button>
             </section>
         </div>
 
         <!-- areas for displaying API data -->
         <div class="tile is-parent notification">
             <section class="tile is-child notification is-success">
-                <p>Thumbnail</p>
-                <p id="thumbnail" class="results">Search Results go here</p>
+                <p>Movie Poster</p>
+                <p id="thumbnail" class="results"></p>
             </section>
-            <section class="tile is-child notification is-warning">
-                <p>Year Released</p>
-                <p id="year" class="results">Search Results go here</p>
-            </section>
-            <section class="tile is-child notification is-danger">
-                <p>Plot Summary</p>
-                <p id="plot" class="results">Search Results go here</p>
-            </section>
-            <section class="tile is-child notification is-link">
-                <p>Ratings</p>
-                <p id="ratings" class="results">Search Results go here</p>
-            </section>
+            <div class="tile is-parent notification is-vertical">
+                <section class="tile is-child notification is-info">
+                    <p>Movie Title</p>
+                    <p id="title" class="results"></p>
+                </section>
+                <section class="tile is-child notification is-warning">
+                    <p>Year Released</p>
+                    <p id="year" class="results"></p>
+                </section>
+                <section class="tile is-child notification is-danger">
+                    <p>Ratings</p>
+                    <p id="ratings" class="results"></p>
+                </section>
+            </div>
         </div>
+
+        <section class="plot-summary tile is-child notification is-light">
+            <p>Plot Summary</p>
+            <p id="plot" class="results"></p>
+        </section>
+        <section class="buttons">
+            <h1 class="mr-5">Plot Translations:</h1>
+            <button id="yodaBtn" class="button is-success is-light">Yoda</button>
+            <button id="minionBtn" class="button is-link is-light">Minion</button>
+            <button id="pirateBtn" class="button is-warning is-light">Pirate</button>
+            <button id="klingonBtn" class="button is-danger is-light">Klingon</button>
+            <button id="grootBtn" class="button is-primary is-light">Groot</button>
+        </section>
+        <div id="plotTranslate" class="tile notification is-light"></div>
+
     </div>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
+
+
 </body>
 
 </html>
