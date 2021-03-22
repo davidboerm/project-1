@@ -14,36 +14,40 @@
 <body>
     <div id="container" class="tile is-ancester p-5 notification is-info is-vertical">
 
-        <!-- Movie Search input field and Submit butto -->
-        <section class="header tile is-parent"><img src="assets/images/RT_300EssentialMovies_700X250.jpeg">
+        <!-- Movie Search input field and Submit button -->
+        <section class="header tile is-parent"><img src="assets/images/RT_300EssentialMovies_700X250.jpeg"
+                style="width: 100%">
         </section>
-        <div class="tile is-parent notification is-info is-flex flex-justify-content-center">
+        <div class="tile is-parent notification is-info is-6 ">
 
 
-            <section class="tile is-child">
-                <input id="searchInput" class="input" type="text" placeholder="Movie Search...">
-                <button id="searchBtn" class="button">Submit</button>
+            <section class="search tile is-child columns is-mobile">
+                <input id="searchInput" class="input column is-6" type="text" placeholder="Movie Search..."><button
+                    id="searchBtn" class="button column is-danger is-1"><span class="icon">
+                        <i class="fas fa-search fa-lg"></i>
+                    </span></button>
             </section>
         </div>
 
         <!-- areas for displaying API data -->
         <div class="tile is-parent notification">
-            <section class="tile is-child notification is-success">
-                <p>Movie Poster</p>
-                <p id="thumbnail" class="results"></p>
+            <section class="poster tile is-child notification is-success is-4">
+                <figure class="image is-2x3">
+                    <img src="assets/images/posterPlaceholderImg.png" alt="movie poster" title="Movie Poster" />
+                </figure>
             </section>
-            <div class="tile is-parent notification is-vertical">
-                <section class="tile is-child notification is-info">
-                    <p>Movie Title</p>
-                    <p id="title" class="results"></p>
+            <div class="info-container tile is-parent notification is-vertical">
+                <section class="movie-title tile is-child notification is-info" style="height: auto">
+                    <p class="tile is-size-6-mobile">Movie Title</p>
+                    <p id="title" class="results is-size-4-mobile"></p>
                 </section>
                 <section class="tile is-child notification is-warning">
-                    <p>Year Released</p>
-                    <p id="year" class="results"></p>
+                    <p class="is-size-6-mobile">Date Released</p>
+                    <p id="year" class="results s-size-4-mobile"></p>
                 </section>
                 <section class="tile is-child notification is-danger">
-                    <p>Ratings</p>
-                    <p id="ratings" class="results"></p>
+                    <p class="is-size-6-mobile">Ratings</p>
+                    <p id="ratings" class="results is-size-4-mobile"></p>
                 </section>
             </div>
         </div>
@@ -52,18 +56,20 @@
             <p>Plot Summary</p>
             <p id="plot" class="results"></p>
         </section>
+        <h1 class="mr-5">Plot Translations:</h1>
         <section class="buttons">
-            <h1 class="mr-5">Plot Translations:</h1>
-            <button id="yodaBtn" class="button is-success is-light">Yoda</button>
-            <button id="minionBtn" class="button is-link is-light">Minion</button>
-            <button id="pirateBtn" class="button is-warning is-light">Pirate</button>
-            <button id="klingonBtn" class="button is-danger is-light">Klingon</button>
-            <button id="grootBtn" class="button is-primary is-light">Groot</button>
+
+            <button id="yodaBtn" class="button is-success is-light is-size-7-mobile">Yoda</button>
+            <button id="minionBtn" class="button is-link is-light is-size-7-mobile">Minion</button>
+            <button id="pirateBtn" class="button is-warning is-light is-size-7-mobile">Pirate</button>
+            <button id="klingonBtn" class="button is-danger is-light is-size-7-mobile">Klingon</button>
+            <button id="grootBtn" class="button is-primary is-light is-size-7-mobile">Groot</button>
         </section>
-        <div id="plotTranslate" class="tile notification is-light"></div>
+        <div id="plotTranslate" class="tile notification is-light is-size-6-mobile"></div>
 
     </div>
-    
+
+    <script src="https://kit.fontawesome.com/b2dae9ee9b.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
