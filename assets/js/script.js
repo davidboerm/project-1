@@ -1,14 +1,12 @@
 const movieApiKey ="f3192513&t=";
-var searchInputEl = document.querySelector("#searchInput");   //Yes this line is JavaScript. Lol
+var searchInputEl = document.querySelector("#searchInput");                 //Yes this line is JavaScript. Lol
 var searchBtnEl = $("#searchBtn");
 var thumbnailEl = $("#thumbnail");
 var yearEl = $("#year");
-//var searchResults = document.querySelector("#searchResults");
 var titleEl = $("#title");
 var ratingsEl0 = $("#ratings0");
 var ratingsEl1 = $("#ratings1")
 var ratingsEl2 = $("#ratings2")
-
 var plotSumEl = $("#plot");
 
 
