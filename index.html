@@ -22,20 +22,19 @@
 
 
             <section class="search tile is-child columns is-mobile">
-                <input id="searchInput" class="input column" type="text" placeholder="Movie Search..."><button
+                <input id="searchInput" class="input column is-6" type="text" placeholder="Movie Search..."><button
                     id="searchBtn" class="button column is-danger is-1"><span class="icon">
                         <i class="fas fa-search fa-lg"></i>
                     </span></button>
             </section>
         </div>
-        
 
         <!-- areas for displaying API data -->
         <div class="tile is-parent notification">
-            <section class="poster tile is-child notification is-success is-6">
+            <section class="poster tile is-child notification is-success is-4">
                 <figure class="image is-2x3">
                     <img id="thumbnail" src="/assets/images/posterPlaceholderImg.png">
-                  </figure>
+                </figure>
             </section>
             <div class="info-container tile is-parent notification is-vertical">
                 <section class="movie-title tile is-child notification is-info" style="height: auto">
@@ -54,7 +53,7 @@
                 </section>
             </div>
         </div>
-        
+
         <!-- modal button and model code (need a trigger to add class "is-active" to main div for modal)-->
         <p>
             <a id="modalBtn" class = "button is-warning modal-button" data-target = "#modal">Click to Watch Trailer</a>
@@ -77,6 +76,7 @@
           </div>
 
         <!-- plot summary -->
+
         <section class="plot-summary tile is-child notification is-light">
             <p>Plot Summary</p>
             <p id="plot" class="results"></p>

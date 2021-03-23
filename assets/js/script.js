@@ -1,12 +1,13 @@
 const movieApiKey ="f3192513&t=";
-var searchInputEl = document.querySelector("#searchInput");
-var searchBtnEl = document.querySelector("#searchBtn");
-var thumbnailEl = document.querySelector("#thumbnail");
-var yearEl = document.querySelector("#year");
-//var searchResults = document.querySelector("#searchResults");
-var titleEl = document.querySelector("#title");
-var ratingsEl = document.querySelector("#ratings");
-var plotSumEl = document.querySelector("#plot");
+var searchInputEl = document.querySelector("#searchInput");                 //Yes this line is JavaScript. Lol
+var searchBtnEl = $("#searchBtn");
+var thumbnailEl = $("#thumbnail");
+var yearEl = $("#year");
+var titleEl = $("#title");
+var ratingsEl0 = $("#ratings0");
+var ratingsEl1 = $("#ratings1")
+var ratingsEl2 = $("#ratings2")
+var plotSumEl = $("#plot");
 
 
 
@@ -14,11 +15,6 @@ var requestOptions = {
     method: "Get",
     redirect: "Follow"
 };
-
-
-
-
-
 
 function searching(event) {
     event.preventDefault();
@@ -36,71 +32,17 @@ function searching(event) {
     .then(function(data){
         console.log(data);
    
-
-    thumbnailEl.innerHTML =
-    `
-    <ul>
-    <li><img src= ${data.Poster}></li>
-    </ul>
-    `;
+    thumbnailEl.attr("src", data.Poster);
+    titleEl.text(data.Title);
+    yearEl.text(data.Released);
+    plotSumEl.text(data.Plot);
+    ratingsEl0.text(`Internet Movie Database: ${data.Ratings[0].Value}`);
+    ratingsEl1.text(`Rotten Tomatoes: ${data.Ratings[1].Value}`);
+    ratingsEl2.text(`Metacritic: ${data.Ratings[2].Value}`);
     
-    // thumbnailEl.innerHTML =
-    // `
-    // <ul>
-    // <li><img src= ${data.Poster}></li>
-    // </ul>
-    // `;
-
-    titleEl.innerHTML =
-    `
-    <ul>
-    <li>${data.Title}</li>
-    </ul>
-    ` ;
-
-    yearEl.innerHTML =
-    `
-    <ul>
-    <li>${data.Released}</li>
-    </ul>
-    `;
-
-    plotSumEl.innerHTML =
-    `
-    <ul>
-    <li>${data.Plot}</li>
-    </ul>
-    `;
-
-    ratingsEl.innerHTML =
-    `
-    <ul>
-    <li>Internet Movie Database: ${data.Ratings[0].Value}</li>
-    <li>Rotten Tomatoes: ${data.Ratings[1].Value}</li>
-    <li>Metacritic: ${data.Ratings[2].Value}</li>
-    </ul>
-    `;
-
-    
-
-
-
-    
-
-
-
-
-
-
    });
    
-   
-
-
-
-
-
 
 }
 
-searchBtnEl.addEventListener("click", searching);
+searchBtnEl.on("click", searching);
