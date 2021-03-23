@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
+    <!-- linked stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <title>Movie Review</title>
@@ -54,12 +54,15 @@
             </div>
         </div>
 
-        <!-- modal button and model code (need a trigger to add class "is-active" to main div for modal)-->
+        <!-- modal button and model code (need a JS trigger to add class "is-active" to main div for modal below (id="modal") -->
         <p>
             <a id="modalBtn" class = "button is-warning modal-button" data-target = "#modal">Click to Watch Trailer</a>
         </p>
         <br>
-        <div id="modal" class="modal is-active">
+
+        <!-- this is where the class "is-active" needs to be added by JS when the button id "modalBtn" is clicked  -->
+        <div id="modal" class="modal">
+
             <div class="modal-background"></div>
             <div class="modal-card">
               <header class="modal-card-head">
@@ -67,8 +70,8 @@
                 <button id="modalCloseBtn" class="delete" aria-label="close"></button>
               </header>
               <section class="modal-card-body">
-                <!-- Content ... -->
-                <iframe width="600" height="350" src="">
+                <!-- this is where the iframe "src" needs to be updated with the URL for the movie poster from the API -->
+                <iframe id="trailer" width="600" height="350" src="">
                 </iframe>
               </section>
               
