@@ -1,4 +1,4 @@
-const movieApiKey ="f3192513&t=";
+const movieApiKey ="";
 var searchInputEl = document.querySelector("#searchInput");                 //Yes this line is JavaScript. Lol
 var searchBtnEl = $("#searchBtn");
 var thumbnailEl = $("#thumbnail");
