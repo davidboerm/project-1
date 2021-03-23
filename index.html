@@ -22,20 +22,19 @@
 
 
             <section class="search tile is-child columns is-mobile">
-                <input id="searchInput" class="input column" type="text" placeholder="Movie Search..."><button
+                <input id="searchInput" class="input column is-6" type="text" placeholder="Movie Search..."><button
                     id="searchBtn" class="button column is-danger is-1"><span class="icon">
                         <i class="fas fa-search fa-lg"></i>
                     </span></button>
             </section>
         </div>
-        
 
         <!-- areas for displaying API data -->
         <div class="tile is-parent notification">
-            <section class="poster tile is-child notification is-success is-6">
+            <section class="poster tile is-child notification is-success is-4">
                 <figure class="image is-2x3">
                     <img id="thumbnail" src="/assets/images/posterPlaceholderImg.png">
-                  </figure>
+                </figure>
             </section>
             <div class="info-container tile is-parent notification is-vertical">
                 <section class="movie-title tile is-child notification is-info" style="height: auto">
@@ -54,28 +53,6 @@
                 </section>
             </div>
         </div>
-        
-        <!-- modal button -->
-        <p>
-            <a id="modalBtn" class = "button is-warning modal-button" data-target = "#modal">Click to Watch Trailer</a>
-        </p>
-        <br>
-        <div id="modal" class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-              <header class="modal-card-head">
-                <p class="modal-card-title">Modal title</p>
-                <button id="modalCloseBtn" class="delete" aria-label="close"></button>
-              </header>
-              <section class="modal-card-body">
-                <!-- Content ... -->
-                <iframe width="420" height="315" src="">
-                </iframe>
-              </section>
-              
-            </div>
-          </div>
-
 
         <section class="plot-summary tile is-child notification is-light">
             <p>Plot Summary</p>
