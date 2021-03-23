@@ -55,35 +55,36 @@
             </div>
         </div>
         
-        <!-- modal button -->
+        <!-- modal button and model code (need a trigger to add class "is-active" to main div for modal)-->
         <p>
             <a id="modalBtn" class = "button is-warning modal-button" data-target = "#modal">Click to Watch Trailer</a>
         </p>
         <br>
-        <div id="modal" class="modal">
+        <div id="modal" class="modal is-active">
             <div class="modal-background"></div>
             <div class="modal-card">
               <header class="modal-card-head">
-                <p class="modal-card-title">Modal title</p>
+                <p class="modal-card-title">Movie Trailer</p>
                 <button id="modalCloseBtn" class="delete" aria-label="close"></button>
               </header>
               <section class="modal-card-body">
                 <!-- Content ... -->
-                <iframe width="420" height="315" src="">
+                <iframe width="600" height="350" src="">
                 </iframe>
               </section>
               
             </div>
           </div>
 
-
+        <!-- plot summary -->
         <section class="plot-summary tile is-child notification is-light">
             <p>Plot Summary</p>
             <p id="plot" class="results"></p>
         </section>
+        
+        <!-- translator section -->
         <h1 class="mr-5">Plot Translations:</h1>
         <section class="buttons">
-
             <button id="yodaBtn" class="button is-success is-light is-size-7-mobile">Yoda</button>
             <button id="minionBtn" class="button is-link is-light is-size-7-mobile">Minion</button>
             <button id="pirateBtn" class="button is-warning is-light is-size-7-mobile">Pirate</button>
@@ -91,9 +92,9 @@
             <button id="grootBtn" class="button is-primary is-light is-size-7-mobile">Groot</button>
         </section>
         <div id="plotTranslate" class="tile notification is-light is-size-6-mobile"></div>
-
     </div>
 
+    <!-- scripts -->
     <script src="https://kit.fontawesome.com/b2dae9ee9b.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
