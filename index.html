@@ -5,19 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <!-- linked stylesheets -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <title>Movie Review</title>
 </head>
 
 <body>
-    
+
     <div id="container" class="tile is-ancester p-5 notification is-info is-vertical">
 
         <!-- Movie Search input field and Submit button -->
-        <section class="header tile is-parent"><img src="assets/images/RT_300EssentialMovies_700X250.jpeg"
-                style="width: 100%">
+        <section class="header tile is-parent"><img src="assets/images/header-image3-01.png" style="width: 100%">
         </section>
         <div class="tile is-parent notification is-info is-6 ">
             <section class="search tile is-child columns is-mobile">
@@ -28,8 +32,18 @@
                     </span></button>
             </section>
         </div>
-        
-        
+
+        <!-- ERROR MESSAGE - triggered by "Error Message section of JS" -->
+
+        <!-- <article class="message">
+            <div class="message-header has-background-danger">
+                <p>Welp! Try Again</p>
+                <button class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body has-background-danger-light"><p class="message-content"></p>
+                
+            </div>
+        </article> -->
 
         <!-- areas for displaying API data -->
         <div class="tile is-parent notification">
@@ -56,9 +70,6 @@
             </div>
         </div>
 
-        
-        
-
         <!-- plot summary -->
 
         <section class="plot-summary tile is-child notification is-light">
@@ -76,30 +87,10 @@
             <button id="grootBtn" class="button is-primary is-light is-size-7-mobile">Groot</button>
         </section>
         <section>
-            
-            
-            <p id="plotTranslate" class="tile notification is-light is-size-6-mobile results">
+            <p id="plotTranslate" class="tile notification is-light is-size-6-mobile results is-flex flex-wrap">
             </p>
         </section>
     </div>
-
-    <div id="modal" class="modal">
-        <div class="modal-background"></div>
-            <div class="modal-content has-">
-                <div class="message is-danger">
-                    <div class="message-header">
-                      Well, that didn't work!
-                    </div>
-                    <div class="message-body">
-                      
-                    </div>
-                  </div>
-            </div>
-        
-        
-          
-        <button class="modal-close is-large" aria-label="close"></button>
-      </div>
 
     <!-- scripts -->
     <script src="https://kit.fontawesome.com/b2dae9ee9b.js" crossorigin="anonymous"></script>
