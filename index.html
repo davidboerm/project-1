@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    
     <div id="container" class="tile is-ancester p-5 notification is-info is-vertical">
 
         <!-- Movie Search input field and Submit button -->
@@ -27,6 +28,8 @@
                     </span></button>
             </section>
         </div>
+        
+        
 
         <!-- areas for displaying API data -->
         <div class="tile is-parent notification">
@@ -52,12 +55,9 @@
                 </section>
             </div>
         </div>
-        <a id ="trailer" href="" target="_blank">Watch Movie Trailer</a>
-       
-                </section>
 
-            </div>
-        </div>
+        
+        
 
         <!-- plot summary -->
 
@@ -75,8 +75,31 @@
             <button id="klingonBtn" class="button is-danger is-light is-size-7-mobile">Klingon</button>
             <button id="grootBtn" class="button is-primary is-light is-size-7-mobile">Groot</button>
         </section>
-        <div id="plotTranslate" class="tile notification is-light is-size-6-mobile"></div>
+        <section>
+            
+            
+            <p id="plotTranslate" class="tile notification is-light is-size-6-mobile results">
+            </p>
+        </section>
     </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-background"></div>
+            <div class="modal-content has-">
+                <div class="message is-danger">
+                    <div class="message-header">
+                      Well, that didn't work!
+                    </div>
+                    <div class="message-body">
+                      
+                    </div>
+                  </div>
+            </div>
+        
+        
+          
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
 
     <!-- scripts -->
     <script src="https://kit.fontawesome.com/b2dae9ee9b.js" crossorigin="anonymous"></script>
