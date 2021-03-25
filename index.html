@@ -19,11 +19,10 @@
                 style="width: 100%">
         </section>
         <div class="tile is-parent notification is-info is-6 ">
-
-
             <section class="search tile is-child columns is-mobile">
-                <input id="searchInput" class="input column is-6" type="text" placeholder="Movie Search..."><button
-                    id="searchBtn" class="button column is-danger is-1"><span class="icon">
+                <input id="searchInput" class="input column is-6" type="text" placeholder="Movie Search...">
+                <button id="searchBtn" class="button column is-danger is-1">
+                    <span class="icon">
                         <i class="fas fa-search fa-lg"></i>
                     </span></button>
             </section>
@@ -33,7 +32,7 @@
         <div class="tile is-parent notification">
             <section class="poster tile is-child notification is-success is-4">
                 <figure class="image is-2x3">
-                    <img id="thumbnail" src="/assets/images/posterPlaceholderImg.png">
+                    <img id="thumbnail" src="assets/images/posterPlaceholderImg.png">
                 </figure>
             </section>
             <div class="info-container tile is-parent notification is-vertical">
@@ -56,7 +55,7 @@
 
         <!-- modal button and model code (need a JS trigger to add class "is-active" to main div for modal below (id="modal") -->
         <p>
-            <a id="modalBtn" class = "button is-warning modal-button" data-target = "#modal">Click to Watch Trailer</a>
+            <a id="modalBtn" class="button is-warning modal-button" data-target="#modal">Click to Watch Trailer</a>
         </p>
         <br>
 
@@ -65,18 +64,18 @@
 
             <div class="modal-background"></div>
             <div class="modal-card">
-              <header class="modal-card-head">
-                <p class="modal-card-title">Movie Trailer</p>
-                <button id="modalCloseBtn" class="delete" aria-label="close"></button>
-              </header>
-              <section class="modal-card-body">
-                <!-- this is where the iframe "src" needs to be updated with the URL for the movie poster from the API -->
-                <iframe id="trailer" width="600" height="350" src="">
-                </iframe>
-              </section>
-              
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Movie Trailer</p>
+                    <button id="modalCloseBtn" class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <!-- this is where the iframe "src" needs to be updated with the URL for the movie poster from the API -->
+                    <iframe id="trailer" width="600" height="350" src="">
+                    </iframe>
+                </section>
+
             </div>
-          </div>
+        </div>
 
         <!-- plot summary -->
 
@@ -84,7 +83,7 @@
             <p>Plot Summary</p>
             <p id="plot" class="results"></p>
         </section>
-        
+
         <!-- translator section -->
         <h1 class="mr-5">Plot Translations:</h1>
         <section class="buttons">
@@ -99,11 +98,10 @@
 
     <!-- scripts -->
     <script src="https://kit.fontawesome.com/b2dae9ee9b.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
-
-
 </body>
 
 </html>

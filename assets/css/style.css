@@ -9,3 +9,7 @@ p.results {
 #searchBtn {
     padding: 0%;
 }
+
+#plotTranslate {
+    display: none;
+}

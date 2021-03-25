@@ -1,4 +1,4 @@
-const movieApiKey ="";
+const movieApiKey = "f3192513&t";
 var searchInputEl = document.querySelector("#searchInput");                 //Yes this line is JavaScript. Lol
 var searchBtnEl = $("#searchBtn");
 var thumbnailEl = $("#thumbnail");
@@ -8,6 +8,7 @@ var ratingsEl0 = $("#ratings0");
 var ratingsEl1 = $("#ratings1")
 var ratingsEl2 = $("#ratings2")
 var plotSumEl = $("#plot");
+var plotText;
 
 
 
@@ -18,31 +19,124 @@ var requestOptions = {
 
 function searching(event) {
     event.preventDefault();
+    resetPage();
     var omdbUrlFront = "http://www.omdbapi.com/?apikey=" + movieApiKey + "&t=";
-    
     var userSelection = searchInputEl.value.trim();
     var completeUrl = omdbUrlFront + userSelection;
-    
-    
     console.log(completeUrl);
     fetch(completeUrl)
-    .then(function(response) {
-        return response.json()
-    })
-    .then(function(data){
-        console.log(data);
-   
-    thumbnailEl.attr("src", data.Poster);
-    titleEl.text(data.Title);
-    yearEl.text(data.Released);
-    plotSumEl.text(data.Plot);
-    ratingsEl0.text(`Internet Movie Database: ${data.Ratings[0].Value}`);
-    ratingsEl1.text(`Rotten Tomatoes: ${data.Ratings[1].Value}`);
-    ratingsEl2.text(`Metacritic: ${data.Ratings[2].Value}`);
-    
-   });
-   
-
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            console.log(data);
+            plotText = data.Plot;
+            thumbnailEl.attr("src", data.Poster);
+            titleEl.text(data.Title);
+            yearEl.text(data.Released);
+            plotSumEl.text(plotText);
+            for (var i = 0; i < data.Ratings.length; i++) {
+                $(`#ratings${i}`).text(`${data.Ratings[i].Source}: ${data.Ratings[i].Value}`);
+            }
+        });
 }
 
 searchBtnEl.on("click", searching);
+
+//Page Reset
+function resetPage() {
+    $("#thumbnail").attr("src", "assets/images/posterPlaceholderImg.png");
+    $("#title").text("");
+    $("#year").text("");
+    $("#plot").text("");
+    $("#rating0").text("");
+    $("#rating1").text("");
+    $("#rating2").text("");
+    $("#plotTranslate").text("");
+}
+
+//Error Message status = data.Response
+function errorMessage(status) {
+    if (status === "True") {
+        return;
+    } else {
+        $(".modal").attr({ "class": "is-active" })
+        $(".modal-content").text(`${userSelection} is not recognized as a movie title. Please check the spelling and try again.`)
+        return;
+    }
+}
+
+//Yoda Translation
+function translateYoda() {
+    var URL = `https://api.funtranslations.com/translate/yoda.json?text=${plotText}`
+    axios.get(URL)
+        .then(function (response) {
+            $("#plotTranslate")
+                .css("display", "inline")
+                .text(response.data.contents.translated)
+        })
+}
+
+$("#yodaBtn").on("click", function () {
+    translateYoda();
+})
+
+//Minion Translation
+function translateMinion() {
+    var URL = `https://api.funtranslations.com/translate/minion.json?text=${plotText}`
+    axios.get(URL)
+        .then(function (response) {
+            $("#plotTranslate")
+                .css("display", "inline")
+                .text(response.data.contents.translated)
+        })
+}
+
+$("#minionBtn").on("click", function () {
+    translateMinion();
+})
+
+//Pirate Translation
+function translatePirate() {
+    var URL = `https://api.funtranslations.com/translate/pirate.json?text=${plotText}`
+    axios.get(URL)
+        .then(function (response) {
+            $("#plotTranslate")
+                .css("display", "inline")
+                .text(response.data.contents.translated)
+        })
+}
+
+$("#pirateBtn").on("click", function () {
+    translatePirate();
+})
+
+//Klingon Translation
+function translateKlingon() {
+    var URL = `https://api.funtranslations.com/translate/klingon.json?text=${plotText}`
+    axios.get(URL)
+        .then(function (response) {
+            $("#plotTranslate")
+                .css("display", "inline")
+                .text(response.data.contents.translated)
+        })
+}
+
+$("#klingonBtn").on("click", function () {
+    translateKlingon();
+})
+
+//Groot Translation
+function translateGroot() {
+    var URL = `https://api.funtranslations.com/translate/groot.json?text=${plotText}`
+    axios.get(URL)
+        .then(function (response) {
+            $("#plotTranslate")
+                .css("display", "inline")
+                .text(response.data.contents.translated)
+        })
+}
+
+$("#grootBtn").on("click", function () {
+    translateGroot();
+})
