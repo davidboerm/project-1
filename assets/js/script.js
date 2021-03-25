@@ -30,15 +30,21 @@ function searching(event) {
         })
         .then(function (data) {
             console.log(data);
-            plotText = data.Plot;
-            thumbnailEl.attr("src", data.Poster);
-            titleEl.text(data.Title);
-            yearEl.text(data.Released);
-            plotSumEl.text(plotText);
-            for (var i = 0; i < data.Ratings.length; i++) {
-                $(`#ratings${i}`).text(`${data.Ratings[i].Source}: ${data.Ratings[i].Value}`);
+            if (data.Response === "True") {
+                plotText = data.Plot;
+                thumbnailEl.attr("src", data.Poster);
+                titleEl.text(data.Title);
+                yearEl.text(data.Released);
+                plotSumEl.text(plotText);
+                for (var i = 0; i < data.Ratings.length; i++) {
+                    $(`#ratings${i}`).text(`${data.Ratings[i].Source}: ${data.Ratings[i].Value}`);
+                }
+            } else {
+                console.log("Error!");
+                //$(".modal").attr({ "class": "is-active" })
+                //$(".modal-content").text(`${userSelection} is not recognized as a movie title. Please check the spelling and try again.`)
             }
-        });
+        })
 }
 
 searchBtnEl.on("click", searching);
@@ -49,9 +55,9 @@ function resetPage() {
     $("#title").text("");
     $("#year").text("");
     $("#plot").text("");
-    $("#rating0").text("");
-    $("#rating1").text("");
-    $("#rating2").text("");
+    $("#ratings0").text("");
+    $("#ratings1").text("");
+    $("#ratings2").text("");
     $("#plotTranslate").text("");
 }
 
@@ -60,9 +66,9 @@ function errorMessage(status) {
     if (status === "True") {
         return;
     } else {
-        $(".modal").attr({ "class": "is-active" })
-        $(".modal-content").text(`${userSelection} is not recognized as a movie title. Please check the spelling and try again.`)
-        return;
+        console.log("Error!");
+        //$(".modal").attr({ "class": "is-active" })
+        //$(".modal-content").text(`${userSelection} is not recognized as a movie title. Please check the spelling and try again.`)
     }
 }
 
