@@ -21,11 +21,12 @@
     <div id="container" class="tile is-ancester p-5 notification is-info is-vertical">
 
         <!-- Movie Search input field and Submit button -->
+        
         <section class="header tile is-parent"><img src="assets/images/header-image3-01.png" style="width: 100%">
         </section>
         <div class="tile is-parent notification is-info is-6 ">
             <section class="search tile is-child columns is-mobile">
-                <input id="searchInput" class="input column is-6" type="text" placeholder="Movie Search...">
+                <input id="searchInput" class="input column is-6" type="text" placeholder="Movie Title Search...">
                 <button id="searchBtn" class="button column is-danger is-1">
                     <span class="icon">
                         <i class="fas fa-search fa-lg"></i>
@@ -52,6 +53,10 @@
                     <img id="thumbnail" src="assets/images/posterPlaceholderImg.png">
                 </figure>
             </section>
+
+            
+             
+            
             <div class="info-container tile is-parent notification is-vertical">
                 <section class="movie-title tile is-child notification is-info" style="height: auto">
                     <p class="tile is-size-6-mobile">Movie Title</p>
@@ -70,6 +75,9 @@
             </div>
         </div>
 
+        <!-- Trailer Button -->
+        <div><a id="trailer-url" class="button trailer-url is-warning" target="blank" href=""><i class="fas fa-video"></i>&nbsp;Movie Trailer</a></div><br>
+
         <!-- plot summary -->
 
         <section class="plot-summary tile is-child notification is-light">
@@ -78,7 +86,7 @@
         </section>
 
         <!-- translator section -->
-        <h1 class="mr-5">Plot Translations:</h1>
+        <p class="is-size-5">Click a translator button below for a little fun:</p>
         <section class="buttons">
             <button id="yodaBtn" class="button is-success is-light is-size-7-mobile">Yoda</button>
             <button id="minionBtn" class="button is-link is-light is-size-7-mobile">Minion</button>
