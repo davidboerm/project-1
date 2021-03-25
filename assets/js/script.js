@@ -44,6 +44,25 @@ function searching(event) {
                 //$(".modal").attr({ "class": "is-active" })
                 //$(".modal-content").text(`${userSelection} is not recognized as a movie title. Please check the spelling and try again.`)
             }
+            const imdbKey = "k_ogun1xnq";
+
+var imdbFront = "https://imdb-api.com/en/API/Trailer/k_ogun1xnq/" 
+var trailerId = data.imdbID;
+var  imdbUrl = imdbFront + trailerId;
+fetch(imdbUrl)
+.then(function(response) {
+return response.json()
+})
+.then(function(data){
+console.log(data); 
+
+var movieTrailerEl = $("#trailer");
+movieTrailerEl.attr("href", data.link);
+
+console.log(movieTrailerEl.attr);
+
+
+});
         })
 }
 
