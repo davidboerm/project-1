@@ -13,6 +13,7 @@
     <link rel="manifest" href="assets/images/favicon/site.webmanifest">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
     <title>Movie Review</title>
 </head>
 
@@ -21,12 +22,12 @@
     <div id="container" class="tile is-ancester p-5 notification is-info is-vertical">
 
         <!-- Movie Search input field and Submit button -->
-        
+
         <section class="header tile is-parent"><img src="assets/images/header-image3-01.png" style="width: 100%">
         </section>
         <div class="tile is-parent notification is-info is-6 ">
             <section class="search tile is-child columns is-mobile">
-                <input id="searchInput" class="input column is-6" type="text" placeholder="Movie Title Search...">
+                <input id="searchInput" class="input column is-6" type="text" placeholder="Movie Title Search..." onfocus="this.value=''">
                 <button id="searchBtn" class="button column is-danger is-1">
                     <span class="icon">
                         <i class="fas fa-search fa-lg"></i>
@@ -34,29 +35,28 @@
             </section>
         </div>
 
-        <!-- ERROR MESSAGE - triggered by "Error Message section of JS" -->
+        <!-- ERROR MESSAGE - triggered by "Error Message' section of JS -->
 
-        <!-- <article class="message">
-            <div class="message-header has-background-danger">
-                <p>Welp! Try Again</p>
-                <button class="delete" aria-label="delete"></button>
+        <div class="modal" id="errorModal">
+            <div class="modal-background"></div>
+            <div class="modal-content  is-size-2 is-size-4-mobile mt-6">
+
+                <div class="box has-background-danger-dark has-text-white is-text-centered" id="errorMessage"> Your
+            selection is not recognized as a movie title. Please check the spelling and try again.</div>
+
             </div>
-            <div class="message-body has-background-danger-light"><p class="message-content"></p>
-                
-            </div>
-        </article> -->
+
+            <button class="modal-close is-large" id="closeModal" aria-label="close"></button>
+        </div>
 
         <!-- areas for displaying API data -->
         <div class="tile is-parent notification">
-            <section class="poster tile is-child notification is-success is-4">
-                <figure class="image is-2x3">
+            <section class="poster tile is-child notification is-success is-2x3 is-5">
+                <figure class="image">
                     <img id="thumbnail" src="assets/images/posterPlaceholderImg.png">
                 </figure>
             </section>
 
-            
-             
-            
             <div class="info-container tile is-parent notification is-vertical">
                 <section class="movie-title tile is-child notification is-info" style="height: auto">
                     <p class="tile is-size-6-mobile">Movie Title</p>
@@ -76,7 +76,8 @@
         </div>
 
         <!-- Trailer Button -->
-        <div><a id="trailer-url" class="button trailer-url is-warning" target="blank" href=""><i class="fas fa-video"></i>&nbsp;Movie Trailer</a></div><br>
+        <div><a id="trailer-url" class="button trailer-url is-warning" target="blank" href=""><i
+                    class="fas fa-video"></i>&nbsp;Movie Trailer</a></div><br>
 
         <!-- plot summary -->
 
