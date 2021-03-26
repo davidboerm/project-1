@@ -15,10 +15,10 @@ The web technologies used in this application include:  HTML, CSS, JavaScript, a
 [Movie Review Live Webpage]( https://davidboerm.github.io/project-1/)
 
 ## Contributors
-David Boerm
-Bruce Mowrey
-Travis Springer
-D.J. Worthy
+- David Boerm
+- Bruce Mowrey
+- Travis Springer
+- D.J. Worthy
 
 ## License
 None
