@@ -1,4 +1,4 @@
-# Assignment 07:  Unit 7 [Project One]  Movie Review
+# Assignment 07:  Project One  Movie Review
 
 ## Description
 This is an interactive application that allows a user to search movie tiles and gain a wealth of information.  Movie enthusiast are presented with one convenient platform for movie titles, descriptions, ratings, plots, trailers, and plot translations.  The plot translations are of the movie plot summary in Yoda, Minion, Pirate, Klingon, and Groot.
